@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  preseed-keys:
     image: nginx
     volumes:
      - ./preseed:/usr/share/nginx/html:ro

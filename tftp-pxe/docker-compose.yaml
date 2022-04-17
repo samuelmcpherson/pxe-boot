@@ -1,6 +1,6 @@
 version: "3"
 services:
-  pxe:
+  pxe-boot:
     image: jumanjiman/tftp-hpa
     volumes:
       - ./debian-installer:/tftpboot/debian-installer:ro
