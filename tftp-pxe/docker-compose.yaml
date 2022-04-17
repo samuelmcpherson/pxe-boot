@@ -1,0 +1,10 @@
+version: "3"
+services:
+  pxe:
+    image: jumanjiman/tftp-hpa
+    volumes:
+      - ./debian-installer:/tftpboot/debian-installer:ro
+      - ./pxelinux.cfg:/tftpboot/pxelinux.cfg:ro
+    ports:
+     - "69:69/udp"
+    restart: always
