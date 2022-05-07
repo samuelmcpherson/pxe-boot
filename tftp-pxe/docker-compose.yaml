@@ -1,10 +1,14 @@
-version: "3"
+version: '3.4'
 services:
-  pxe-boot:
-    image: jumanjiman/tftp-hpa
+  tftpd-hpa:
+    image: danrue/tftpd-hpa
     volumes:
-      - ./debian-installer:/tftpboot/debian-installer:ro
-      - ./pxelinux.cfg:/tftpboot/pxelinux.cfg:ro
+      - ./tftp:/srv/tftp:ro
     ports:
-     - "69:69/udp"
+      - 69:69/udp
     restart: always
+        
+volumes:
+  tftp:
+    name: tftp-filesystem
+    
